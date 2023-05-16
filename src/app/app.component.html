@@ -1,0 +1,65 @@
+<h1 class="text-4xl font-bold text-center">Rock, Paper, Scissors</h1>
+
+<div class="container flex flex-col justify-center items-center">
+  <h2 class="mt-8 text-xl font-semibold">Scoreboard</h2>
+  <div class="flex mt-2 py-2 border scoreboard-box">
+    <div class="px-4 py-4 border-r border-black text-xxl">{{ scores.computer }}</div>
+    <div class="px-4 py-4 text-xxl">{{ scores.person }}</div>
+  </div>
+</div>
+
+<div class="container mt-40 flex flex-col justify-center items-center">
+
+  <div class="grid grid-cols-2 gap-4">
+
+    <div class="person1 flex items-center justify-end" *ngIf="computer">
+      <span class="mr-8">Computer</span>
+      <svg [ngClass]="'icon text-gold hand-' + computer" *ngIf="computer">
+        <use [attr.xlink:href]="'#hand-' + computer"></use>
+      </svg>
+    </div>
+
+    <div class="person2 flex items-center justify-start" *ngIf="person">
+      <svg [ngClass]="'icon text-gold hand-' + person" *ngIf="person">
+        <use [attr.xlink:href]="'#hand-' + person"></use>
+      </svg>
+      <span class="ml-8 font-bold">You</span>
+    </div>
+
+  </div>
+
+  <div class="text-4xl font-bold uppercase text-center" *ngIf="!computer && !person">
+    Choose your weapon!
+  </div>
+
+</div>
+
+<div class="absolute bottom-0 py-4 w-screen flex flex-col justify-center items-center">
+
+  <div class="mt-4 grid grid-cols-3 gap-4">
+
+    <button class="p-4 border-4 border-gray-100 rounded-full hover:border-gray-300  weapon hand-grabbing"
+      (click)="play('rock')">
+      <svg class="icon hand-rock text-gray-600">
+        <use xlink:href="#hand-rock"></use>
+      </svg>
+    </button>
+
+    <button class="p-4 border-4 border-gray-100 rounded-full hover:border-gray-300 weapon hand-grab"
+      (click)="play('paper')">
+      <svg class="icon hand-paper text-gray-600">
+        <use xlink:href="#hand-paper"></use>
+      </svg>
+    </button>
+
+    <button class="p-4 border-4 border-gray-100 rounded-full hover:border-gray-300 weapon cursor-pointer"
+      (click)="play('scissors')">
+      <svg class="icon hand-scissors text-gray-600">
+        <use xlink:href="#hand-scissors"></use>
+      </svg>
+    </button>
+  </div>
+
+  <button class="mt-8 py-2 px-4 bg-gray-300 rounded uppercase font-bold" (click)="reset()">Restart</button>
+
+</div>

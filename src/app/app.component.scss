@@ -1,0 +1,44 @@
+.person1{
+    svg.hand-scissors{
+        transform: scaleX(-1);
+    }
+    svg.hand-paper {
+        transform: rotate(90deg);
+      }
+      svg.hand-rock {
+        transform: rotate(90deg);
+      }
+}
+.person2{
+
+    svg.hand-paper {
+        transform: rotate(-90deg) scaleX(-1);;
+    }
+      svg.hand-rock {
+        transform: rotate(-90deg) scaleX(-1);;
+    }
+}
+.text-gold {
+    color: #c98917
+  }
+  .container{
+    margin: 30px auto;
+  }
+  .hand-grab{
+    cursor: grab;
+  }
+  .hand-grabbing{
+    cursor: grabbing;
+  }
+  .scoreboard-box{
+    background: blanchedalmond;
+    border: 4px solid gray;
+    font-weight: bold;
+    color: black;
+    font-size: 28px;
+  }
+  .weapon{
+    svg{
+        width: 100px;
+    }
+  }
